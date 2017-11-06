@@ -5,9 +5,9 @@
  */
 package student.lab;
 
+import java.text.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
 
 
 /**
@@ -34,13 +34,13 @@ public class DateUtilities {
     }
     
     //with default format
-    public final LocalDateTime toLocalDateTimeDefaultFormat(String date){
+    public final LocalDateTime toLocalDateTimeDefaultFormat(String date) throws ParseException{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM dd yyyy");
         return LocalDateTime.parse(date, formatter);
     }
     
     //with custom format
-    public final LocalDateTime toLocalDateTimecustomFormat(String date, String custFormat){
+    public final LocalDateTime toLocalDateTimecustomFormat(String date, String custFormat) throws ParseException{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(custFormat);
         return LocalDateTime.parse(date, formatter);
     }
